@@ -170,7 +170,7 @@ public class EntityDropBear extends Monster implements IAnimatedEntity {
             boolean validAboveState = aboveState.isFaceSturdy(level(), abovePos, Direction.DOWN);
             boolean validBelowState = belowState.isFaceSturdy(level(), this.getBlockPosBelowThatAffectsMyMovement(), Direction.UP);
             LivingEntity attackTarget = this.getTarget();
-            if (attackTarget != null && distanceTo(attackTarget) < attackTarget.getBbWidth() + this.getBbWidth() + 1 && this.hasLineOfSight(attackTarget)) {
+            if (attackTarget != null && distanceTo(attackTarget) < attackTarget.getBbWidth() + this.getBbWidth()  && this.hasLineOfSight(attackTarget)) {
                 if (this.getAnimationTick() == 6) {
                     if (this.getAnimation() == ANIMATION_BITE) {
                         final float yRotRad = this.getYRot() * Mth.DEG_TO_RAD;

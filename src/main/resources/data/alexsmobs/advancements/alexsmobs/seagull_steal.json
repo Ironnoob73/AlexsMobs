@@ -5,10 +5,10 @@
       "nbt": "{DisplayEntityType:\"alexsmobs:seagull\"}"
     },
     "title": {
-      "translate": "advancements.alexsmobs.seagull_steal.title"
+      "translate": "ld_anvil.feature_removed.title"
     },
     "description": {
-      "translate": "advancements.alexsmobs.seagull_steal.desc"
+      "translate": "ld_anvil.feature_removed.desc"
     }
   },
   "parent": "alexsmobs:alexsmobs/root",

@@ -1079,5 +1079,8 @@
   "advancements.alexsmobs.stink_ray.desc": "合成一把臭屁手枪",
   "advancements.alexsmobs.banana_slug.title": "趋同进化……",
   "advancements.alexsmobs.banana_slug.desc": "遇见一只香蕉蛞蝓。这有点不太开胃。",
-  "alexsmobs.gui.capsid_transformation": "转换"
+  "alexsmobs.gui.capsid_transformation": "转换",
+
+  "ld_anvil.feature_removed.title":"§c§l【功能已移除】",
+  "ld_anvil.feature_removed.desc":"§c这个功能因为太讨厌了被惨遭移除"
 }

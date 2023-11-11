@@ -4,11 +4,11 @@ license="GNU LESSER GENERAL PUBLIC LICENSE"
 issueTrackerURL="https://github.com/Alex-the-666/AlexsMobs/issues" #optional
 [[mods]] #mandatory
 modId="alexsmobs" #mandatory
-version="1.22.6" #mandatory
-displayName="Alex's Mobs" #mandatory
+version="1.22.6-downvote" #mandatory
+displayName="Alex's Mobs Downvote Edition" #mandatory
 displayURL="https://www.curseforge.com/minecraft/mc-mods/alexs-mobs" #optional
-authors="Alexthe668, Carro1001, Paint_Ninja" #optional
-description='''New, original, engaging, and aesthetic mobs for Minecraft.'''
+authors="Alexthe668, Carro1001, Paint_Ninja, §7LD_Anvil" #optional
+description='''§c§l强力削弱修改版，建议用于替换整合包中的模组而非独自使用。'''
 [[dependencies.alexsmobs]] #optional
     # the modid of the dependency
     modId="citadel" #mandatory

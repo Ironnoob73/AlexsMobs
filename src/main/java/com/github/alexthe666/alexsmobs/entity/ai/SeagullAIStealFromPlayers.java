@@ -71,11 +71,11 @@ public class SeagullAIStealFromPlayers extends Goal {
             if(hasFoods(target)){
                 ItemStack foodStack = getFoodItemFrom(target);
                 if(!foodStack.isEmpty()){
-                    ItemStack copy = foodStack.copy();
-                    foodStack.shrink(1);
-                    copy.setCount(1);
+                    //ItemStack copy = foodStack.copy();
+                    //foodStack.shrink(1);
+                    //copy.setCount(1);
                     seagull.peck();
-                    seagull.setItemInHand(InteractionHand.MAIN_HAND, copy);
+                    //seagull.setItemInHand(InteractionHand.MAIN_HAND, copy);
                     fleeTime = 60;
                     seagull.stealCooldown = 1500 + seagull.getRandom().nextInt(1500);
                     if(target instanceof ServerPlayer){

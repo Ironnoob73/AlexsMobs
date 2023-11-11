@@ -20,24 +20,25 @@ plugins {
 
 repositories{
     maven {
-        name = "CurseForge"
-        url = "https://minecraft.curseforge.com/api/maven/"
+        // Location of the maven for mixed mappings, Registrate, and Flywheel
+        name 'tterrag maven'
+        url 'https://maven.tterrag.com'
     }
     maven {
-        // location of a maven mirror for JEI files, as a fallback
-        name = "ModMaven"
-        url = "https://modmaven.dev"
+        // location of the maven that hosts JEI files since January 2023
+        // location of the maven for Vazkii's mods
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
     }
     maven {
-        name = "CurseMaven"
-        url = "https://www.cursemaven.com"
+        url 'https://www.cursemaven.com'
         content {
             includeGroup "curse.maven"
         }
     }
 }
 
-version = '1.22.6'
+version = '1.22.6-downvote'
 group = 'com.github.alexthe667' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'alexsmobs'
 

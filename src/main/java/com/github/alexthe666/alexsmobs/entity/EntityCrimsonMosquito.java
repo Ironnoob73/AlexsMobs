@@ -195,9 +195,9 @@ public class EntityCrimsonMosquito extends Monster {
             return;
         }
         final EntityMosquitoSpit llamaspitentity = new EntityMosquitoSpit(this.level(), this);
-        final double d0 = target.getX() - this.getX();
-        final double d1 = target.getY(0.3333333333333333D) - llamaspitentity.getY();
-        final double d2 = target.getZ() - this.getZ();
+        final double d0 = -target.getX() - this.getX();
+        final double d1 = -target.getY(0.3333333333333333D) - llamaspitentity.getY();
+        final double d2 = -target.getZ() - this.getZ();
         final float f = Mth.sqrt((float) (d0 * d0 + d2 * d2)) * 0.2F;
         llamaspitentity.shoot(d0, d1 + (double) f, d2, 1.5F, 10.0F);
         if (!this.isSilent()) {
@@ -244,46 +244,9 @@ public class EntityCrimsonMosquito extends Monster {
                     final double extraX = radius * Mth.sin(Mth.PI + angle);
                     final double extraZ = radius * Mth.cos(angle);
                     this.setPos(mount.getX() + extraX, Math.max(mount.getY() + mount.getEyeHeight() * 0.25F, mount.getY()), mount.getZ() + extraZ);
-                    if (!mount.isAlive() || mount instanceof Player && ((Player) mount).isCreative()) {
-                        this.removeVehicle();
-                    }
+                    this.removeVehicle();
                     if (!this.level().isClientSide) {
-                        if (drinkTime % 20 == 0 && this.isAlive()) {
-                            final boolean mungus = AMConfig.warpedMoscoTransformation && mount instanceof EntityMungus && ((EntityMungus) mount).isWarpedMoscoReady();
-                            if (mount.hurt(this.damageSources().mobAttack(this), mungus ? 7F : 2.0F)) {
-                                if (mungus) {
-                                    ((EntityMungus) mount).disableExplosion();
-                                }
-                                final boolean sick = this.isNonMungusWarpedTrigger(mount);
-                                if (sick || mungus) {
-                                    if (!this.isSick()) {
-                                        for (ServerPlayer serverplayerentity : this.level().getEntitiesOfClass(ServerPlayer.class, this.getBoundingBox().inflate(40.0D, 25.0D, 40.0D))) {
-                                            AMAdvancementTriggerRegistry.MOSQUITO_SICK.trigger(serverplayerentity);
-                                        }
-                                    }
-                                    this.setSick(true);
-                                    this.setFlying(false);
-                                    flightTicks = -150 - random.nextInt(200);
-                                }
-                                this.gameEvent(GameEvent.EAT);
-                                this.playSound(SoundEvents.HONEY_DRINK, this.getSoundVolume(), this.getVoicePitch());
-                                this.setBloodLevel(this.getBloodLevel() + 1);
-                                if (this.getBloodLevel() > 3) {
-                                    this.removeVehicle();
-                                    AlexsMobs.sendMSGToAll(new MessageMosquitoDismount(this.getId(), mount.getId()));
-                                    this.setFlying(false);
-                                    this.flightTicks = -15;
-                                }
-                            }
-                        }
-
-                        if (drinkTime > 81) {
-                            drinkTime = -20 - random.nextInt(20);
-                            this.removeVehicle();
-                            AlexsMobs.sendMSGToAll(new MessageMosquitoDismount(this.getId(), mount.getId()));
-                            this.setFlying(false);
-                            this.flightTicks = -15;
-                        }
+                        this.setBloodLevel(this.getBloodLevel() + 1);
                     }
                 }
 
@@ -404,7 +367,7 @@ public class EntityCrimsonMosquito extends Monster {
                 this.setFlying(false);
 
             if (isFlying()) {
-                this.setNoGravity(true);
+                this.setNoGravity(false);
             } else {
                 this.setNoGravity(false);
             }

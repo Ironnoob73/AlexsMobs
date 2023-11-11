@@ -1073,5 +1073,8 @@
   "advancements.alexsmobs.stink_ray.desc": "Craft a Stink Ray.",
   "advancements.alexsmobs.banana_slug.title": "Convergent Evolution...",
   "advancements.alexsmobs.banana_slug.desc": "Encounter a Banana Slug. Not so appetising.",
-  "alexsmobs.gui.capsid_transformation": "Transformation"
+  "alexsmobs.gui.capsid_transformation": "Transformation",
+
+  "ld_anvil.feature_removed.title":"§c§l[FEATURE REMOVED]",
+  "ld_anvil.feature_removed.desc":"§cThis feature was removed because it was so annoying"
 }

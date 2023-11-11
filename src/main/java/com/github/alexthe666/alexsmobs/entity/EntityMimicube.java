@@ -311,7 +311,7 @@ public class EntityMimicube extends Monster implements RangedAttackMob {
         this.alterSquishAmount();
         LivingEntity livingentity = this.getTarget();
         if (livingentity != null && this.distanceToSqr(livingentity) < 144D) {
-            this.moveControl.setWantedPosition(livingentity.getX(), livingentity.getY(), livingentity.getZ(), this.moveControl.getSpeedModifier());
+            //this.moveControl.setWantedPosition(livingentity.getX(), livingentity.getY(), livingentity.getZ(), this.moveControl.getSpeedModifier());
             this.wasOnGround = true;
         }
         if (this.entityData.get(ATTACK_TICK) > 0) {
@@ -345,11 +345,16 @@ public class EntityMimicube extends Monster implements RangedAttackMob {
     protected void jumpFromGround() {
         Vec3 vector3d = this.getDeltaMovement();
         this.setDeltaMovement(vector3d.x, this.getJumpPower(), vector3d.z);
+        LivingEntity livingentity = this.getTarget();
+        if (livingentity != null && this.distanceToSqr(livingentity) < 144D) {
+            this.moveControl.setWantedPosition(livingentity.getX(), livingentity.getY(), livingentity.getZ(), this.moveControl.getSpeedModifier());
+            //this.wasOnGround = true;
+        }
         this.hasImpulse = true;
     }
 
     protected int getJumpDelay() {
-        return this.random.nextInt(20) + 10;
+        return this.random.nextInt(20) + 20;
     }
 
     protected void alterSquishAmount() {
