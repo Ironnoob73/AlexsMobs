@@ -127,13 +127,13 @@ public class EntityDropBear extends Monster implements IAnimatedEntity {
         });
     }
 
-    public boolean isInvulnerableTo(DamageSource source) {
+    /*public boolean isInvulnerableTo(DamageSource source) {
         return super.isInvulnerableTo(source) || source.is(DamageTypeTags.IS_FALL) || source.is(DamageTypes.IN_WALL);
-    }
+    }*/
 
-    protected void checkFallDamage(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
+    /*protected void checkFallDamage(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
         super.checkFallDamage(y, onGroundIn, state, pos);
-    }
+    }*/
 
     protected void playBlockFallSound() {
         this.onLand();
