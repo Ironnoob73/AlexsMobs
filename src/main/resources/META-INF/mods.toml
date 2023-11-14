@@ -4,7 +4,7 @@ license="GNU LESSER GENERAL PUBLIC LICENSE"
 issueTrackerURL="https://github.com/Alex-the-666/AlexsMobs/issues" #optional
 [[mods]] #mandatory
 modId="alexsmobs" #mandatory
-version="1.22.6-downvote20231112" #mandatory
+version="1.22.6-downvote20231114" #mandatory
 displayName="Alex's Mobs Downvote Edition" #mandatory
 displayURL="https://github.com/Ironnoob73/AlexsMobs" #optional
 authors="Original: Alexthe668, Carro1001, Paint_Ninja, §7Modified by: LD_Anvil" #optional

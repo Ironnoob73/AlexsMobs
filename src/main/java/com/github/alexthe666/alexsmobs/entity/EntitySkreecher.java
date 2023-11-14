@@ -238,7 +238,7 @@ public class EntitySkreecher extends Monster {
                         spawnAt = spawnAt.below();
                     }
                     Holder<Biome> holder = level().getBiome(spawnAt);
-                    if(!this.level().isClientSide && getNearbyWardens().isEmpty() && holder.is(AMTagRegistry.SKREECHERS_CAN_SPAWN_WARDENS)){
+                    /*if(!this.level().isClientSide && getNearbyWardens().isEmpty() && holder.is(AMTagRegistry.SKREECHERS_CAN_SPAWN_WARDENS)){
                         Warden warden = EntityType.WARDEN.create(this.level());
 
                         warden.moveTo(this.getX(), spawnAt.getY() + 1, this.getZ(), this.getYRot(), 0.0F);
@@ -247,7 +247,7 @@ public class EntitySkreecher extends Monster {
                         warden.increaseAngerAt(this, 79, false);
                         this.level().addFreshEntity(warden);
 
-                    }
+                    }*/
                 }
             }
             clapTick++;
